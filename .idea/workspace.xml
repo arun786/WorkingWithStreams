@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/README.md" description="List&lt;Dish&gt; collect1 = menu.stream().filter(dish -&gt;..." line="38" />
+    <bookmark url="file://$PROJECT_DIR$/README.md" description="List&lt;Dish&gt; collect1 = menu.stream().filter(dish -&gt;..." line="40" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d60adac6-f8a4-4c4a-8980-94b81129e36f" name="Default" comment="" />
@@ -84,8 +84,8 @@
           </provider>
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="410">
-                <caret line="39" column="4" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="4" />
+              <first_editor relative-caret-position="432">
+                <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -898,8 +898,8 @@
       </provider>
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="410">
-            <caret line="39" column="4" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="4" />
+          <first_editor relative-caret-position="432">
+            <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
             <folding />
           </first_editor>
           <second_editor />

@@ -7,15 +7,17 @@ Stream interface in java defines 2 operations,
     1. Intermediate operations
     2. Terminal Operations
     
-### Intermediate Operations are
+### Examples of Intermediate Operations are
     
     1. filter
     2. map
     3. limit
     
-### Terminal Operation
+### Examples of Terminal Operation
     
-    collect
+    1. collect
+    2. count
+    3. forEach
     
 ### Example 
     
