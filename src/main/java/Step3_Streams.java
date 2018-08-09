@@ -20,7 +20,7 @@ public class Step3_Streams {
         System.out.println(dishNames);
 
         /**
-         * To get the length of each character in a list
+         * To get the length of each word in a list
          */
         List<String> names = Arrays.asList("Never", "Give", "Up", "Arun");
         List<Integer> lengthOfNames = names.stream().map(s -> s.length()).collect(Collectors.toList());

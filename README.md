@@ -131,7 +131,7 @@ Map takes a function as an argument, function is applied to each element, maapin
             System.out.println(dishNames);
     
             /**
-             * To get the length of each character in a list
+             * To get the length of each word in a list
              */
             List<String> names = Arrays.asList("Never", "Give", "Up", "Arun");
             List<Integer> lengthOfNames = names.stream().map(s -> s.length()).collect(Collectors.toList());
@@ -148,3 +148,34 @@ Map takes a function as an argument, function is applied to each element, maapin
              */
             List<Integer> lengthOfEachDishes = dishes.stream().map(Dish::getName).map(String::length).collect(Collectors.toList());
             System.out.println(lengthOfEachDishes);
+
+### Flat Map
+
+            List<Dish> dishes = DishFactory.dishFactory();
+    
+            /**
+             * To get individual characters, the below code wont work as the map returns string array
+             */
+            List<String> words = Arrays.asList("Hello", "World");
+            List<String[]> collect = words.stream().map(word -> word.split("")).collect(Collectors.toList());
+            System.out.println(collect);
+    
+            /**
+             * The below code will print the individual letters
+             */
+            List<String> individualLetters = words.stream().map(word -> word.split("")).flatMap(Arrays::stream).collect(Collectors.toList());
+            System.out.println(individualLetters);
+    
+            /**
+             * To get distinct individual letters
+             */
+            List<String> distinctIndividualLetters = words.stream().map(w -> w.split("")).flatMap(Arrays::stream).distinct().collect(Collectors.toList());
+            System.out.println(distinctIndividualLetters);
+    
+            /**
+             * Given a list of numbers, print the square of the numbers
+             */
+    
+            List<Integer> numbers = Arrays.asList(1, 2, 4, 5, 7, 9);
+            List<Integer> squareOfNumber = numbers.stream().map(i -> i * i).collect(Collectors.toList());
+            System.out.println(squareOfNumber);
