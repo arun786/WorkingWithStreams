@@ -32,6 +32,12 @@ public class Step1_Stream {
         List<Dish> collect1 = menu.stream().filter(dish -> dish.getCalories() > 400).collect(Collectors.toList());
         System.out.println(collect1);
 
+        /**
+         * To check for vegetarian dishes
+         */
+        List<String> collect2 = menu.stream().filter(Dish::isVegetarian).map(Dish::getName).collect(Collectors.toList());
+        System.out.println(collect2);
+
 
     }
 }
