@@ -70,7 +70,7 @@ Stream interface in java defines 2 operations,
     
 ### Filtering elements in a stream
 
-    List<Dish> menus = DishFactory.dishFactory();
+            List<Dish> menus = DishFactory.dishFactory();
     
             /**
              * Filtering a stream with predicate, this will filter all the vegetarian dish
@@ -115,3 +115,36 @@ Stream interface in java defines 2 operations,
              */
             List<Dish> first2MeatDish = menus.stream().filter(d -> d.getType() == Dish.Type.MEAT).limit(2).collect(Collectors.toList());
             System.out.println(first2MeatDish);
+            
+            
+### Use Of Map
+
+Map takes a function as an argument, function is applied to each element, maaping it to a new element.
+    
+    
+            List<Dish> dishes = DishFactory.dishFactory();
+    
+            /**
+             * The below map will display only the name of all dishes
+             */
+            List<String> dishNames = dishes.stream().map(Dish::getName).collect(Collectors.toList());
+            System.out.println(dishNames);
+    
+            /**
+             * To get the length of each character in a list
+             */
+            List<String> names = Arrays.asList("Never", "Give", "Up", "Arun");
+            List<Integer> lengthOfNames = names.stream().map(s -> s.length()).collect(Collectors.toList());
+            System.out.println(lengthOfNames);
+    
+            /**
+             * The above code can also be written as below
+             */
+            List<Integer> lngthOfNames = names.stream().map(String::length).collect(Collectors.toList());
+            System.out.println(lngthOfNames);
+    
+            /**
+             * Length of the name of each dish
+             */
+            List<Integer> lengthOfEachDishes = dishes.stream().map(Dish::getName).map(String::length).collect(Collectors.toList());
+            System.out.println(lengthOfEachDishes);
