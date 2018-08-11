@@ -179,3 +179,37 @@ Map takes a function as an argument, function is applied to each element, maapin
             List<Integer> numbers = Arrays.asList(1, 2, 4, 5, 7, 9);
             List<Integer> squareOfNumber = numbers.stream().map(i -> i * i).collect(Collectors.toList());
             System.out.println(squareOfNumber);
+            
+            /**
+            * to print words
+            */
+            List<String> seperatedWords = Arrays.asList("w e", "t h e", "pe op le");
+            List<String> collect1 = seperatedWords.stream().map(w -> w.split(" ")).flatMap(Arrays::stream).collect(Collectors.toList());
+            System.out.println(collect1);
+            /*
+            o/p will be as below
+            [w, e, t, h, e, pe, op, le]
+            */
+            
+### anyMatch(),noneMatch(), allMatch()
+ 
+        List<Dish> dishes = DishFactory.dishFactory();
+        
+        boolean b = dishes.stream().anyMatch(Dish::isVegetarian);
+        if (b) {
+            System.out.println("There are few dishes which are vegetarian");
+        }
+        
+        List<Dish> vegDishes = dishes.stream().filter(Dish::isVegetarian).collect(Collectors.toList());
+        
+        boolean b1 = vegDishes.stream().allMatch(Dish::isVegetarian);
+        if (b1) {
+            System.out.println("All dishes are vegetarian");
+        }
+        
+        List<Dish> lowCalorie = dishes.stream().filter(d -> d.getCalories() < 500).collect(Collectors.toList());
+        
+        boolean b2 = lowCalorie.stream().noneMatch(d -> d.getCalories() >= 500);
+        if (b2) {
+            System.out.println("All dishes are low calorie");
+        }
