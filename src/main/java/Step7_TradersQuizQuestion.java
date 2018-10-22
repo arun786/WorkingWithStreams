@@ -15,6 +15,8 @@ public class Step7_TradersQuizQuestion {
     public static void main(String[] args) {
 
         List<Transaction> transactions = TradeFactory.tradeFactory();
+
+        System.out.println(transactions);
         /**
          * Find all transactions in 2011 and sort them by value (ascending)
          */
