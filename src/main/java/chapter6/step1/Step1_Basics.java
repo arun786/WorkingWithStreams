@@ -1,10 +1,12 @@
-package chapter6;
+package chapter6.step1;
 
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.time.LocalDate;
 import java.util.Arrays;
@@ -13,6 +15,8 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 public class Step1_Basics {
+    private static final Logger logger = LoggerFactory.getLogger(Step1_Basics.class);
+
     public static void main(String[] args) {
 
         /**
@@ -21,7 +25,7 @@ public class Step1_Basics {
 
         List<Transaction> transactions = transactionBuilder();
         Map<Currency, List<Transaction>> collect = transactions.stream().collect(Collectors.groupingBy(Transaction::getCurrency));
-        System.out.println(collect);
+        logger.info("Collection of transactions based on currency {}", collect);
     }
 
 
