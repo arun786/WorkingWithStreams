@@ -61,13 +61,41 @@ public class CountMaxMin {
         List<Dish> dishes5 = dishBuilder();
         IntSummaryStatistics collect3 = dishes5.stream().collect(Collectors.summarizingInt(Dish::getCalories));
         logger.info("Summation of calories for all dishes, {}", collect3.getSum());
-        logger.info("Average of calories for all dishes, {}",collect3.getAverage());
-        logger.info("Max calorie, {}",collect3.getMax());
-        logger.info("Min calorie, {}",collect3.getMin());
+        logger.info("Average of calories for all dishes, {}", collect3.getAverage());
+        logger.info("Max calorie, {}", collect3.getMax());
+        logger.info("Min calorie, {}", collect3.getMin());
 
+        /**
+         * use of Summarizing int
+         */
+        List<Dish> dishes6 = dishBuilder();
+        Double collect4 = dishes6.stream().collect(Collectors.averagingInt(Dish::getCalories));
+        logger.info("average value {}", collect4);
+
+        /**
+         * use of join
+         */
+        List<Dish> dishes7 = dishBuilder();
+        String collect5 = dishes7.stream().map(Dish::getName).collect(Collectors.joining(","));
+        logger.info("Concatenated value, {}", collect5);
+
+        /**
+         * use of reducing
+         */
+
+        List<Dish> dishes8 = dishBuilder();
+        Integer collect6 = dishes8.stream().map(Dish::getCalories).reduce(0, (i, j) -> i + j);
+        logger.info("Total value {}", collect6);
+
+        /**
+         * highest value dish using reducing
+         */
+        List<Dish> dishes9 = dishBuilder();
+        Optional<Dish> reduce = dishes9.stream().reduce((d1, d2) -> d1.getCalories() > d2.getCalories() ? d1 : d2);
+        logger.info("Highest value {}", reduce.get());
     }
 
-    public static List<Dish> dishBuilder() {
+    private static List<Dish> dishBuilder() {
         return Arrays.asList(
                 new Dish("beef", false, 700, Dish.Type.MEAT),
                 new Dish("chicken", false, 400, Dish.Type.MEAT),
